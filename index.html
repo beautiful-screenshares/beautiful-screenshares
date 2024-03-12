@@ -33,7 +33,39 @@
         p {
           width: 50em;
         }
+
+        table {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        table, table th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        table tr:nth-child(even){background-color: #f2f2f2;}
+
+        table tr:hover {background-color: #ddd;}
+
+        table th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
+        }
     </style>
+    <script>
+      window.onload = function() {
+        document.querySelectorAll('.shuffle').forEach(el => {
+          for (let i = el.children.length; i >= 0; i--) {
+            el.appendChild(el.children[Math.random() * i | 0]);
+          }
+        })
+      }
+    </script>
   </head>
   <body>
     <h1> Video Quality Matters </h1>
@@ -46,12 +78,12 @@
 
     <div class="viewport-padding">
       <h1> Screenshare Quality Today </h1>
-      <video autoplay playsinline autoplay muted loop src="spreadsheet-getDisplayMedia.mp4"> </video>
+      <video autoplay playsinline autoplay muted loop src="video/spreadsheet-getDisplayMedia.mp4"> </video>
     </div>
 
     <div class="viewport-padding">
       <h1> Screenshare Quality Today </h1>
-      <video autoplay playsinline autoplay muted loop src="spreadsheet-OBS.mp4" > </video>
+      <video autoplay playsinline autoplay muted loop src="video/spreadsheet-OBS.mp4" > </video>
     </div>
 
 
@@ -63,8 +95,78 @@
     </p>
 
     <h1> Why is the quality better?</h1>
-    <h1> Faster Car, Same Road</h1>
+    <p>
+      Broadcasting software gives you total control of the output video. You know exactly the video you want to send, and how you want it to look.
+      Browsers and conferencing apps are tuned to provide the best experience for conferencing. Using WHIP from broadcasting software gives you the
+      best experience for broadcasting/screensharing video.
+    </p>
+
     <h1> Client </h1>
+    <div>
+      <table>
+        <tr>
+          <th> Client </th>
+          <th> WHIP Support </th>
+          <th> Platforms </th>
+        </tr>
+        <tr>
+          <td> GStreamer </td>
+          <td>  <image src="./icon/success.svg" /> </td>
+          <td> BSDs, OpenSolaris, Android, macOS, iOS, Windows, OS/400  </td>
+        </tr>
+        <tr>
+          <td> Larix Broadcaster </td>
+          <td>  <image src="./icon/success.svg" /> </td>
+          <td>  Android, iOS and macOS </td>
+        </tr>
+        <tr>
+          <td> OBS </td>
+          <td>  <image src="./icon/success.svg" /> </td>
+          <td>  Windows, macOS, Linux, BSD </td>
+        </tr>
+      </table>
+    </div>
+
     <h1> Service </h1>
+    <div>
+      <table>
+        <tr>
+          <th> Service </th>
+          <th> WHIP Support </th>
+          <th> Workarounds </th>
+        </tr>
+        <tr>
+          <td> Cloudflare </td>
+          <td>  <image src="./icon/success.svg" /> </td>
+          <td>  </td>
+        </tr>
+        <tr>
+          <td> Dolby.io </td>
+          <td>  <image src="./icon/success.svg" /> </td>
+          <td>  </td>
+        </tr>
+        <tr>
+          <td> Discord </td>
+          <td>  <image src="./icon/failure.svg" /> </td>
+          <td>  </td>
+        </tr>
+        <tr>
+          <td> Twitch </td>
+          <td>  <image src="./icon/success.svg" /> </td>
+          <td>  </td>
+        </tr>
+        <tr>
+          <td> YouTube </td>
+          <td>  <image src="./icon/failure.svg" /> </td>
+          <td>  </td>
+        </tr>
+        <tr>
+          <td> Zoom </td>
+          <td>  <image src="./icon/failure.svg" /> </td>
+          <td>  </td>
+        </tr>
+      </table>
+    </div>
+
   </body>
 </html>
